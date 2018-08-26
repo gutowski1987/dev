@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Wstęp do html</title>
+</head>
+
+<body>
+    <!--<h1>Nagłówek pierwszy.</h1>
+    <h3>Nagłowek trzeci.</h3>
+    <ol>
+        <li>Raz</li>
+        <li>Dwa</li>
+        <li>Trzy</li>
+    </ol>
+    <h3>Kolejny nagłowek trzeci.</h3>
+    <ul>
+        <li>Raz</li>
+        <li>
+            Dwa
+            <ol>
+                <li>
+                    <strong>Strong</strong>
+                </li>
+                <li>
+                    <em>EM</em>
+                    <ol>
+                        <li>Trzeci poziom listy</li>
+                    </ol>
+                </li>
+                <li>Trzy</li>
+            </ol>
+        </li>
+        <li>Trzy</li>
+    </ul>
+
+    <div>
+        <p>
+            Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w przemyśle poligraficznym.
+            <span>Został po raz pierwszy użyty w XV w. przez nieznanego drukarza do wypełnienia tekstem próbnej książki.</span>
+            <div>
+                Pięć wieków później zaczął być używany przemyśle elektronicznym, pozostając praktycznie niezmienionym.
+            </div>
+            Spopularyzował się w latach 60. XX w. wraz z publikacją arkuszy Letrasetu, zawierających fragmenty Lorem Ipsum, a ostatnio
+            z zawierającym różne wersje Lorem Ipsum oprogramowaniem przeznaczonym do realizacji druków na komputerach osobistych,
+            jak Aldus PageMaker
+        </p>
+    </div>
+    <img src="https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/13001000/Beagle-On-White-01-400x267.jpg"
+        alt="beagle dog" />
+    <a href="https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/13001000/Beagle-On-White-01-400x267.jpg">link do zdjęcia beagla</a>
+    <a href="page2.html">Druga strona</a>-->
+    <hr>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Imię</td>
+                        <th>Nazwisko</td>
+                            <th>Wiek</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Tomek</td>
+                    <td>Czerniak</td>
+                    <td>27 lat</td>
+                </tr>
+                <tr>
+                    <td>Agata</td>
+                    <td>Czerniak</td>
+                    <td>24 lat</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <h3>Form tag</h3>
+        <div>
+            <form>
+                <h4>Pierwszy folmularz</h4>
+                <label for="email">
+                    Twój email:
+                </label>
+                <input id="email" name="email" type="email" placeholder="email" required>
+                <label for="password">
+                    Hasło:
+                </label>
+                <input id="password" name="password" type="password" minlength="5" maxlength="10" placeholder="password" required>
+                <br>
+                <p>Twój ulubiony fast-food:</p>
+                <label for="pizza">Pizza:</label>
+                <input name="foodChoice" id="pizza" type="radio" value="pizza">
+                <label for="hotdog">Hotdog:</label>
+                <input name="foodChoice" id="hotdog" type="radio" value="hotdog">
+                <br>
+                <p>
+                    Twój ulubiony kolor:
+                </p>
+                <select name="color">
+                    <option>Niebieski</option>
+                    <option>Czerwony</option>
+                    <option>Zielony</option>
+                </select>
+                <br>
+                <select name="dayBirthdate">
+                    <option disabled selected>Dzień</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                </select>
+                <select name="monthBirthdate">
+                    <option disabled selected>Miesiąc</option>
+                    <option>styczeń</option>
+                    <option>luty</option>
+                    <option>marzec</option>
+                </select>
+                <select name="yearBirthdate">
+                    <option disabled selected>Rok</option>
+                    <option>1999</option>
+                    <option>2000</option>
+                    <option>2001</option>
+                </select>
+                <br>
+                <label for="agree">Akceptuję ciasteczka</label>
+                <input id="agree" name="acceptCookies" type="checkbox">
+                <br>
+
+                <textarea name="paragraf" rows="7" cols="30">
+                </textarea>
+                <br>
+                <button>Wyślij</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

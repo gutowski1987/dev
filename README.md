@@ -1,3 +1,3 @@
 # dev
 
-# testowy tekst
+# Miejsce w którym przechowuję swój świat programowania.

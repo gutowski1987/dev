@@ -1,0 +1,17 @@
+.footer {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    background-color: darken($secondary, 15%);
+    color: $white;
+}
+
+.footer a.nav-link {
+    color: $white;
+    padding: 5px;
+    display: inline-block;
+}
+
+.copyright {
+    background-color: darken($secondary, 100%);
+    padding: 8px 0 !important;
+}

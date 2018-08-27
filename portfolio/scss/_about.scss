@@ -1,0 +1,27 @@
+.about {
+    background-image: url('../img/profile.png') no-repeat center center;
+
+    .about-text {
+        padding-top: 2rem;
+    }
+
+    .about-text span {
+        display: block;
+        padding-bottom: 15px;
+    }
+
+    .about-findme {
+        padding: 20px;
+    }
+
+    .about-findme-icon {
+        opacity: 0.6;
+    }
+    .about-findme-icon i {
+        margin: 20px 20px;
+    }
+
+    .about-findme-icon:hover {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,164 @@
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    padding: 0;
+    margin: 0;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+ul,
+ol {
+    list-style: none;
+}
+blockquote,
+q {
+    quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+a {
+    text-decoration: none;
+    outline: none;
+}
+a:hover {
+    text-decoration: none;
+    outline: none;
+}
+a:focus {
+    text-decoration: none;
+}
+button,
+select {
+    cursor: pointer;
+}
+textarea {
+    resize: none;
+}
+input[type='text'],
+textarea {
+    -webkit-appearance: none;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizelegibility;
+}
+input[type='submit'],
+input[type='reset'] {
+    cursor: pointer;
+}
+input::-ms-clear {
+    display: none;
+}
+fieldset {
+    border: none;
+}
+img {
+    border: 0;
+}
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+html {
+    overflow-y: scroll;
+    /* scrollbar fix (prevent ugly right pull for lower content sites) */
+}

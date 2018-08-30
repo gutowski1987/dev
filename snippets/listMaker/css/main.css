@@ -1,0 +1,76 @@
+/* http://meyerweb.com/eric/tools/css/reset/ */
+@import 'reset.css';
+
+body {
+    font-family: Montserrat, sans-serif;
+    background: #2c3e50;
+    background: -webkit-linear-gradient(to right, #3498db, #2c3e50);
+    background: linear-gradient(to right, #3498db, #2c3e50);
+}
+h1 {
+    background: #2970c0;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: 400;
+}
+h1 i {
+    float: right;
+    cursor: pointer;
+}
+span {
+    background: rgb(197, 0, 13);
+    width: 0;
+    height: 40px;
+    margin-right: 20px;
+    text-align: center;
+    color: #ffffff;
+    display: inline-block;
+    transition: 0.2s linear;
+    opacity: 0;
+}
+li:hover span {
+    width: 40px;
+    opacity: 1;
+    cursor: no-drop;
+}
+li {
+    display: block;
+    background: #ffffff;
+    height: 40px;
+    line-height: 40px;
+    color: #888888;
+    text-overflow: ellipsis ellipsis;
+    overflow: hidden;
+    cursor: pointer;
+}
+li:nth-child(even) {
+    background: #f9f9f9;
+}
+input {
+    height: 40px;
+    width: 100%;
+    font-size: 18px;
+    background: #f6f6f6;
+    box-sizing: border-box;
+    border: 1px solid #88888888;
+    padding: 13px 13px 13px 20px;
+}
+input:focus {
+    border: 2px solid #2970c0;
+    background: #ffffff;
+}
+.container {
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1), -1px -1px 3px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin: 100px auto 0;
+    background: #f6f6f6;
+}
+.wykonane {
+    text-decoration: line-through;
+    color: #888888;
+}
+.clear {
+    clear: both;
+}

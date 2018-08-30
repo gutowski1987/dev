@@ -1,0 +1,11 @@
+/* http://meyerweb.com/eric/tools/css/reset/ */
+@import url('reset.css');
+
+.header {
+    background: url('img/headlogo.jpg') center no-repeat;
+    background-size: contain;
+    height: 100px;
+    -webkit-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5);
+}

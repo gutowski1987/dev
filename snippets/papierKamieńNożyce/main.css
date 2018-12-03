@@ -1,11 +1,73 @@
-/* http://meyerweb.com/eric/tools/css/reset/ */
+/*  http://meyerweb.com/eric/tools/css/reset/  */
 @import url('reset.css');
+
+.clear {
+    clear: both;
+}
 
 .header {
     background: url('img/headlogo.jpg') center no-repeat;
     background-size: contain;
     height: 100px;
-    -webkit-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5);
-    -moz-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5);
-    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5);
+}
+
+.player {
+    display: inline-block;
+    text-align: center;
+    margin: 3% 10% 2%;
+    width: 200px;
+}
+
+.player2 {
+    float: right;
+}
+
+.star {
+    display: inline-block;
+    background-image: url('img/star.png');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+}
+
+.splitter {
+    text-transform: uppercase;
+    text-align: center;
+    background-color: #3377ff;
+    padding: 1%;
+    -webkit-box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5);
+}
+
+.interaction {
+    text-align: center;
+}
+
+.weapon {
+    margin: 1% 2%;
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    background-size: cover;
+}
+
+.interaction h2 {
+    text-align: center;
+    padding: 2%;
+}
+
+.rock {
+    background-image: url('img/rock.png');
+}
+
+.paper {
+    background-image: url('img/paper.png');
+}
+
+.scissors {
+    background-image: url('img/scissors.png');
 }

@@ -13,13 +13,19 @@
     </head>
 
     <body>
+        <div class="pyro1">
+            <div class="before1"></div>
+            <div class="after1"></div>
+        </div>
         <header>
             <h1>RGBcolorGAME</h1>
             <h2 id="colorDisplay">RGB</h2>
         </header>
         <nav>
             <div class="wrapper">
-                <button id="playagain" class="playagain">New colors</button>
+                <button id="playagain" class="playagain">
+                    New colors<span>it will take away 1 point...</span>
+                </button>
                 <div class="level">
                     <button id="easy" class="levelhover">Basic</button>
                     <button id="hard" class="chosenlevel levelhover">
@@ -29,6 +35,11 @@
                 <div id="message" class="message"></div>
             </div>
         </nav>
+        <div class="playerbar">
+            <div class="score">
+                Your score in a row: <span id="scorenumber">0</span>
+            </div>
+        </div>
         <div class="squares">
             <div class="square"></div>
             <div class="square"></div>
@@ -36,6 +47,11 @@
             <div class="square"></div>
             <div class="square"></div>
             <div class="square"></div>
+        </div>
+        <div class="gamerules">
+            Rules are simple:
+            <div>1. The first three elections in a row wins.</div>
+            <div>2. Color change costs 1 point.</div>
         </div>
 
         <script src="script.js" stylescheet="text/javascript"></script>

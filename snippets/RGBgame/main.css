@@ -69,7 +69,7 @@ button {
 }
 
 .message {
-    width: 200px;
+    width: 300px;
     height: 20px;
     color: #3377ff;
     margin: 0 auto;
@@ -113,12 +113,12 @@ button {
     right: 0;
 }
 
-.kwadraty {
+.squares {
     max-width: 500px;
     margin: 10px auto;
 }
 
-.kwadrat {
+.square {
     float: left;
     width: 30%;
     margin: 1.66%;

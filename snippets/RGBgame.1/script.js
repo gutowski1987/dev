@@ -1,4 +1,5 @@
 var numberOfSquares = 6;
+
 var colors = colorGenerator(numberOfSquares);
 var squares = document.querySelectorAll('.square');
 var chosenColor = chooseColor();
@@ -8,8 +9,11 @@ var header = document.querySelector('header');
 var playAgainButton = document.querySelector('#playagain');
 var easyButton = document.querySelector('#easy');
 var hardButton = document.querySelector('#hard');
+let scoreNumber = document.querySelector('#scorenumber');
+scoreNumber.innerHTML = 0;
 
 easyButton.addEventListener('click', function() {
+    scoreNumber.innerHTML = 0;
     easyButton.classList.add('chosenlevel');
     hardButton.classList.remove('chosenlevel');
     numberOfSquares = 3;
@@ -17,7 +21,8 @@ easyButton.addEventListener('click', function() {
     chosenColor = chooseColor();
     colorDisplay.textContent = chosenColor;
     messageDisplay.textContent = ' ';
-    playAgainButton.textContent = 'New colors';
+    playAgainButton.innerHTML =
+        'New colors<span>it will take away 1 point...</span>';
     playAgainButton.style.backgroundColor = '#ffffff';
     playAgainButton.style.color = '#3377ff';
     header.style.backgroundColor = '#3377ff';
@@ -31,6 +36,7 @@ easyButton.addEventListener('click', function() {
 });
 
 hardButton.addEventListener('click', function() {
+    scoreNumber.innerHTML = 0;
     easyButton.classList.remove('chosenlevel');
     hardButton.classList.add('chosenlevel');
     numberOfSquares = 6;
@@ -38,7 +44,8 @@ hardButton.addEventListener('click', function() {
     chosenColor = chooseColor();
     colorDisplay.textContent = chosenColor;
     messageDisplay.textContent = ' ';
-    playAgainButton.textContent = 'New colors';
+    playAgainButton.innerHTML =
+        'New colors<span>it will take away 1 point...</span>';
     playAgainButton.style.backgroundColor = '#ffffff';
     playAgainButton.style.color = '#3377ff';
     header.style.backgroundColor = '#3377ff';
@@ -49,47 +56,52 @@ hardButton.addEventListener('click', function() {
 });
 
 playAgainButton.addEventListener('click', function() {
-    //wygenerować New colors
-    colors = colorGenerator(numberOfSquares);
-    chosenColor = chooseColor();
-    colorDisplay.textContent = chosenColor;
-    messageDisplay.textContent = ' ';
-    for (var i = 0; i < squares.length; i++) {
-        //dodaje kolory do kwadratów
-        squares[i].style.backgroundColor = colors[i];
-    }
-    //reset po wygranej
-    if (playAgainButton.textContent === 'Jeszcze raz?') {
-        playAgainButton.textContent = 'New colors';
-        playAgainButton.style.backgroundColor = '#ffffff';
-        playAgainButton.style.color = '#3377ff';
-        header.style.backgroundColor = '#3377ff';
-        messageDisplay.textContent = ' ';
+    // generate new colors
+    generateNewColors();
+    if (scoreNumber.innerHTML > 0) {
+        scoreNumber.innerHTML = Number(scoreNumber.innerHTML) - 1;
     }
 });
 
 colorDisplay.textContent = chosenColor;
 
 for (var i = 0; i < squares.length; i++) {
-    //dodaje kolory do kwadratów
+    //add colors to squares
     squares[i].style.backgroundColor = colors[i];
+}
 
-    //clickListener do kwadratu
-    squares[i].addEventListener('click', function() {
+squares.forEach(square =>
+    square.addEventListener('click', function() {
         var selectedColor = this.style.backgroundColor;
 
         if (selectedColor === chosenColor) {
+            let presentSquares = [...document.querySelectorAll('.square')];
+            let rgb = presentSquares.map(
+                square => square.style.backgroundColor
+            );
+            if (!rgb.includes('rgb(51, 51, 51)')) {
+                scoreNumber.innerHTML = Number(scoreNumber.innerHTML) + 1;
+            }
             messageDisplay.textContent = 'Great! You WIN!!';
             changeColor(selectedColor);
-            playAgainButton.textContent = 'Try more!';
             playAgainButton.style.color = '#ffffff';
             playAgainButton.style.backgroundColor = '#3377ff';
+
+            if (scoreNumber.innerHTML === '3') {
+                pyro.classList.add('pyro');
+                before.classList.add('before');
+                after.classList.add('after');
+            }
+
+            generateNewColors();
         } else {
             this.style.backgroundColor = '#333333';
-            messageDisplay.textContent = 'ouh... mistake, choose further';
+            messageDisplay.textContent =
+                'ouh... mistake, choose further. Get some practise :)';
+            scoreNumber.innerHTML = 0;
         }
-    });
-}
+    })
+);
 
 // po wskazaniu poprawnej odpowiedzi
 function changeColor(color) {
@@ -117,5 +129,22 @@ function randomColor() {
     var red = Math.floor(Math.random() * 256);
     var green = Math.floor(Math.random() * 256);
     var blue = Math.floor(Math.random() * 256);
-    return 'rgb(' + red + ', ' + green + ', ' + blue + ')';
+    return `rgb(${red}, ${green}, ${blue})`;
 }
+
+function generateNewColors() {
+    colors = colorGenerator(numberOfSquares);
+    chosenColor = chooseColor();
+    colorDisplay.textContent = chosenColor;
+    messageDisplay.textContent = ' ';
+    for (var i = 0; i < squares.length; i++) {
+        //add colors to squares
+        squares[i].style.backgroundColor = colors[i];
+    }
+}
+
+// fireworks
+
+const pyro = document.querySelector('.pyro1');
+const before = document.querySelector('.before1');
+const after = document.querySelector('.after1');

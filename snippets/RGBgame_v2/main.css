@@ -608,3 +608,20 @@ body {
 .modal-footer button {
     border-radius: 10px;
 }
+
+.startmodal {
+    display: flex;
+}
+
+.startmodal h2 {
+    font-size: 25px;
+}
+
+.startmodal button {
+    width: 100px;
+}
+
+.startmodal button:hover {
+    color: #333333;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.4);
+}

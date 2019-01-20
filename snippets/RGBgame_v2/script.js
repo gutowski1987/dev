@@ -12,50 +12,12 @@ var hardButton = document.querySelector('#hard');
 let scoreNumber = document.querySelector('#scorenumber');
 scoreNumber.innerHTML = 0;
 const modal = document.querySelector('#myModal');
+const modalStart = document.querySelector('#myModal2');
 const span = document.querySelector('.close');
 
-easyButton.addEventListener('click', function() {
-    scoreNumber.innerHTML = 0;
-    easyButton.classList.add('chosenlevel');
-    hardButton.classList.remove('chosenlevel');
-    numberOfSquares = 3;
-    colors = colorGenerator(numberOfSquares);
-    chosenColor = chooseColor();
-    colorDisplay.textContent = chosenColor;
-    messageDisplay.textContent = ' ';
-    playAgainButton.innerHTML =
-        'New colors<span>it will take away 1 point...</span>';
-    playAgainButton.style.backgroundColor = '#ffffff';
-    playAgainButton.style.color = '#3377ff';
-    header.style.backgroundColor = '#3377ff';
-    for (var i = 0; i < squares.length; i++) {
-        if (colors[i]) {
-            squares[i].style.backgroundColor = colors[i];
-        } else {
-            squares[i].style.display = 'none';
-        }
-    }
-});
+easyButton.addEventListener('click', easyStart);
 
-hardButton.addEventListener('click', function() {
-    scoreNumber.innerHTML = 0;
-    easyButton.classList.remove('chosenlevel');
-    hardButton.classList.add('chosenlevel');
-    numberOfSquares = 6;
-    colors = colorGenerator(numberOfSquares);
-    chosenColor = chooseColor();
-    colorDisplay.textContent = chosenColor;
-    messageDisplay.textContent = ' ';
-    playAgainButton.innerHTML =
-        'New colors<span>it will take away 1 point...</span>';
-    playAgainButton.style.backgroundColor = '#ffffff';
-    playAgainButton.style.color = '#3377ff';
-    header.style.backgroundColor = '#3377ff';
-    for (var i = 0; i < squares.length; i++) {
-        squares[i].style.display = 'block';
-        squares[i].style.backgroundColor = colors[i];
-    }
-});
+hardButton.addEventListener('click', advancedStart);
 
 playAgainButton.addEventListener('click', function() {
     // generate new colors
@@ -106,6 +68,49 @@ squares.forEach(square =>
     })
 );
 
+function easyStart() {
+    scoreNumber.innerHTML = 0;
+    easyButton.classList.add('chosenlevel');
+    hardButton.classList.remove('chosenlevel');
+    numberOfSquares = 3;
+    colors = colorGenerator(numberOfSquares);
+    chosenColor = chooseColor();
+    colorDisplay.textContent = chosenColor;
+    messageDisplay.textContent = ' ';
+    playAgainButton.innerHTML =
+        'New colors<span>it will take away 1 point...</span>';
+    playAgainButton.style.backgroundColor = '#ffffff';
+    playAgainButton.style.color = '#3377ff';
+    header.style.backgroundColor = '#3377ff';
+    for (var i = 0; i < squares.length; i++) {
+        if (colors[i]) {
+            squares[i].style.backgroundColor = colors[i];
+        } else {
+            squares[i].style.display = 'none';
+        }
+    }
+}
+
+function advancedStart() {
+    scoreNumber.innerHTML = 0;
+    easyButton.classList.remove('chosenlevel');
+    hardButton.classList.add('chosenlevel');
+    numberOfSquares = 6;
+    colors = colorGenerator(numberOfSquares);
+    chosenColor = chooseColor();
+    colorDisplay.textContent = chosenColor;
+    messageDisplay.textContent = ' ';
+    playAgainButton.innerHTML =
+        'New colors<span>it will take away 1 point...</span>';
+    playAgainButton.style.backgroundColor = '#ffffff';
+    playAgainButton.style.color = '#3377ff';
+    header.style.backgroundColor = '#3377ff';
+    for (var i = 0; i < squares.length; i++) {
+        squares[i].style.display = 'block';
+        squares[i].style.backgroundColor = colors[i];
+    }
+}
+
 // po wskazaniu poprawnej odpowiedzi
 function changeColor(color) {
     for (var i = 0; i < squares.length; i++) {
@@ -152,7 +157,7 @@ const pyro = document.querySelector('.pyro1');
 const before = document.querySelector('.before1');
 const after = document.querySelector('.after1');
 
-// popup win
+// popups
 
 // when user clicks on the X in popup
 span.addEventListener('click', () => {
@@ -164,7 +169,7 @@ window.addEventListener('click', e => {
         modal.style.display = 'none';
     }
 });
-// when usec clicks play again
+// when user clicks play again
 modal.addEventListener('click', e => {
     if (e.target.tagName === 'BUTTON') {
         generateNewColors();
@@ -174,5 +179,16 @@ modal.addEventListener('click', e => {
         modal.style.display = 'none';
         scoreNumber.innerHTML = 0;
         header.style.backgroundColor = '#3377ff';
+    }
+});
+
+// popup start
+modalStart.addEventListener('click', e => {
+    if (e.target.classList.value === 'basic') {
+        easyStart();
+        modalStart.style.display = 'none';
+    } else if (e.target.classList.value === 'advanced') {
+        advancedStart();
+        modalStart.style.display = 'none';
     }
 });

@@ -11,6 +11,8 @@ var easyButton = document.querySelector('#easy');
 var hardButton = document.querySelector('#hard');
 let scoreNumber = document.querySelector('#scorenumber');
 scoreNumber.innerHTML = 0;
+const modal = document.querySelector('#myModal');
+const span = document.querySelector('.close');
 
 easyButton.addEventListener('click', function() {
     scoreNumber.innerHTML = 0;
@@ -91,6 +93,7 @@ squares.forEach(square =>
                 pyro.classList.add('pyro');
                 before.classList.add('before');
                 after.classList.add('after');
+                modal.style.display = 'flex';
             }
 
             generateNewColors();
@@ -148,3 +151,28 @@ function generateNewColors() {
 const pyro = document.querySelector('.pyro1');
 const before = document.querySelector('.before1');
 const after = document.querySelector('.after1');
+
+// popup win
+
+// when user clicks on the X in popup
+span.addEventListener('click', () => {
+    modal.style.display = 'none';
+});
+// when user clicks outside the popup
+window.addEventListener('click', e => {
+    if (e.target == modal) {
+        modal.style.display = 'none';
+    }
+});
+// when usec clicks play again
+modal.addEventListener('click', e => {
+    if (e.target.tagName === 'BUTTON') {
+        generateNewColors();
+        pyro.classList.remove('pyro');
+        before.classList.remove('before');
+        after.classList.remove('after');
+        modal.style.display = 'none';
+        scoreNumber.innerHTML = 0;
+        header.style.backgroundColor = '#3377ff';
+    }
+});
